@@ -4,7 +4,7 @@
 <div class="container mt-5">
     <div class="row mb-4">
         <div class="col-12">
-            <h5 class="mb-4">Update todo <?= $data['title'] ?></h5>
+            <h5 class="mb-4">Update<?= $data['title'] ?></h5>
 
             <form action="/todos/<?= $data['id'] ?>" method="post">
                 <input type="hidden" name="_method" value="put" />

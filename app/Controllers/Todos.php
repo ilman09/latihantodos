@@ -60,7 +60,7 @@ class Todos extends ResourceController
         ];
 
 
-        $this->TodoModel->insert($payload);
+        $this->todosModel->insert($payload);
         return redirect()->to('/todos');
     }
 
@@ -71,9 +71,9 @@ class Todos extends ResourceController
      */
     public function edit($id = null)
     {
-        $todo = $this->TodoModel->find($id);
+        $todos = $this->todosModel->find($id);
         
-        if (!$todo) {
+        if (!$todos) {
             throw new \Exception("Data not found!");   
         }
         
@@ -96,7 +96,7 @@ class Todos extends ResourceController
             "created_at" => $this->request->getPost('created_at'),
         ];
 
-        $this->TodosModel->update($id, $payload);
+        $this->todosModel->update($id, $payload);
         return redirect()->to('/todos');
     }
 
